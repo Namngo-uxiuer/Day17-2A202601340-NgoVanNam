@@ -28,12 +28,17 @@ class ContextBudgetManager:
     def trim(self, text: str, max_tokens: int) -> str:
         if estimate_tokens(text) <= max_tokens:
             return text
-        # Token estimator is 4 chars/token. Graph search and the short-term
-        # render both put the most salient content (top-ranked facts, session
-        # summary + durable notes) at the HEAD, so keep the head and drop the
-        # lower-priority tail.
+        # Graph context begins with a useful summary but frequently appends the
+        # newest facts at the tail.  Preserve both ends so recency updates do
+        # not disappear when applying a bounded per-layer budget.
         max_chars = max_tokens * 4
-        return text[:max_chars] + "\n[...trimmed...]"
+        marker = "\n[...trimmed...]\n"
+        available = max(1, max_chars - len(marker))
+        # The summary at the head is usually the strongest relevance signal;
+        # keep most of it, while retaining a tail slice for recent facts.
+        head_chars = (available * 3) // 4
+        tail_chars = available - head_chars
+        return text[:head_chars] + marker + text[-tail_chars:]
 
     def assemble(self, layers: dict[str, str]) -> tuple[str, dict[str, dict[str, int]]]:
         rendered: list[str] = []
