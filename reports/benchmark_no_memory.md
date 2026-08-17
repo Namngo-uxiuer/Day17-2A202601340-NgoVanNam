@@ -5,20 +5,20 @@
 - Cases: **11**
 - Passed: **2/11**
 - Evidence hit rate: **18.2%**
-- Average retrieval latency: **0.0 ms**
+- Average retrieval latency: **0.1 ms**
 - Average token reduction vs full source context: **81.8%**
 
 | Case | Layer | Pass | Latency ms | Retrieved tokens | Token reduction | Missing / Error |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| E01 | short_term | PASS | 0.0 | 133 | 0.0% |  |
+| E01 | short_term | PASS | 0.1 | 133 | 0.0% |  |
 | E06 | semantic | FAIL | 0.0 | 0 | 100.0% | missing=Idempotency-Key, max-3-retries, exponential-backoff |
 | E09 | long_term | FAIL | 0.0 | 0 | 100.0% | missing=LOTUS-88, Java, Spring Boot |
-| E10 | short_term | PASS | 0.3 | 195 | 0.0% |  |
+| E10 | short_term | PASS | 0.4 | 195 | 0.0% |  |
 | E02 | long_term | FAIL | 0.0 | 0 | 100.0% | missing=Python |
 | E03 | long_term | FAIL | 0.0 | 0 | 100.0% | missing=benchmark report, 16:00 |
 | E04 | episodic | FAIL | 0.0 | 0 | 100.0% | missing=ClientSession, concurrency=20, ASYNC-FIX-20 |
 | E05 | episodic | FAIL | 0.0 | 0 | 100.0% | missing=connection churn, timeout threshold |
-| E07 | mixed | FAIL | 0.0 | 0 | 100.0% | missing=Python, Idempotency-Key |
+| E07 | mixed | FAIL | 0.1 | 0 | 100.0% | missing=Python, Idempotency-Key |
 | E11 | semantic | FAIL | 0.0 | 0 | 100.0% | missing=connection pooling, CONN-POOL-FIRST |
 | E08 | long_term | FAIL | 0.0 | 0 | 100.0% | missing=BLUEBIRD-42, TypeScript, NestJS |
 

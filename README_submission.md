@@ -13,7 +13,7 @@ khong de heartbeat tu them instruction hay quyen moi vao durable memory. Fact
 mau thuan phai giu lich su de audit va uu tien fact moi hon trong dung scope.
 
 Benchmark student dat 11/11 (100%); vi vay khong co layer nao thap hon layer
-khac. E03 retrieve nhieu nhat, 1,320 token, do Context Block kem facts can
+khac. E03 retrieve nhieu nhat, 1,337 token, do Context Block kem facts can
 giu open-loop `benchmark report` va deadline 16:00. E07 can long-term (Python)
 va semantic (`Idempotency-Key`); thieu mot trong hai thi huong dan khong con
 ca nhan hoa hoac khong dung quy tac payment. Token reduction trung binh cua

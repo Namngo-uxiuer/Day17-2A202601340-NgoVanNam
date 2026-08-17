@@ -5,5 +5,4 @@ __pycache__/
 *.pyc
 data/golden_eval.json
 data/golden*.json
-golden_eval*.json
 !data/golden_eval.example.json
